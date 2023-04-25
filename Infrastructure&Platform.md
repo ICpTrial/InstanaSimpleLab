@@ -32,8 +32,13 @@ AWSなどのパブリック・クラウド環境においては、インスタ�
 
 ---
 ## Platform
-1. つぎにアプリケーションが稼働するプラットフォームを見ていきましょう。※環境によっては Kubernetesクラスタが統合されていない環境もありますので、その場合は以下の説明をご確認ください。　　
-1. KubernetesやCloudFoundry、この環境には表示されていませんが vSphereや PowerVM の情報も見ていくことが可能です。vSphereはvCenterから、PowerVM の環境ではPowerHMCから情報を取得します。<img width="1816" alt="image" src="https://user-images.githubusercontent.com/22209835/234155003-0a9f6233-64e7-432e-976c-97461aeae72d.png">
+1. つぎにアプリケーションが稼働するプラットフォームを見ていきましょう。※環境によっては Kubernetesクラスタが統合されていない環境もありますので、その場合は以下の説明をご確認ください。
+```
+KubernetesやOpenShift環境においても、DaemonSetとして稼働するInstana Agentを導入することで、  
+コンテナの定義にアノテーションを入れたり、アプリケーションを修正したりすることなく、コンテナの状況やアプリケーションの情報を取得することができます。    
+手間のかかる設定は不要で、すぐにデータの取得が行われ可視化が行われる点は、多くのお客様に評価いただいているポイントです。
+```
+3. KubernetesやCloudFoundry、この環境には表示されていませんが vSphereや PowerVM の情報も見ていくことが可能です。vSphereはvCenterから、PowerVM の環境ではPowerHMCから情報を取得します。<img width="1816" alt="image" src="https://user-images.githubusercontent.com/22209835/234155003-0a9f6233-64e7-432e-976c-97461aeae72d.png">
 
 1. ひとつ定義されている *demo-cluster* が確認できます。右端の**正常性**は 緑色チェックマークで 大きな問題はないようですね。  
 *demo-cluster* のリンクをクリックして、見ていきましょう。<img width="1818" alt="image" src="https://user-images.githubusercontent.com/22209835/234155344-c693a432-542b-42e1-8dfe-fbc86df4ddb8.png">
@@ -43,8 +48,6 @@ AWSなどのパブリック・クラウド環境においては、インスタ�
 1. メニューの **スタック**をクリックすると、このクラスターに関係する アプリケーションやInfrastructure の情報がリストされて表示されます。<img width="1909" alt="image" src="https://user-images.githubusercontent.com/22209835/234155653-6f5577cc-78cf-422b-a755-481e8b13a0c7.png">
 1. Kubernetesの各種リソースがタブとして整理されていますので、確認してみてください。とくに Pod のタブでは、リソースの Requests/Limitsの値をグラフィカルに表示することもできますので、どの名前空間のPodがリソースを消費する設定となっているかなど確認することができます。<img width="954" alt="image" src="https://user-images.githubusercontent.com/22209835/234155747-e346dbfb-095b-43f4-884e-6bdfe78fb19e.png">
 1. 気になる Podがあれば、その Podの情報をクリックすることで、Podのダッシュボードに移動し、実際のリソース利用状況などを確認できます。<img width="1912" alt="image" src="https://user-images.githubusercontent.com/22209835/234155921-8f436eeb-8c46-444e-9436-c02b62f966af.png">
-
-KubernetesやOpenShift環境においても、DaemonSetとして稼働するInstana Agentを導入することで、コンテナの定義にアノテーションを入れたり、アプリケーションを修正したりすることなく、コンテナの状況やアプリケーションの情報を取得することができます。エージェントを導入すると、手間のかかる設定は不要で、すぐにデータの取得が行われ可視化が行われる点は、多くのお客様に評価いただいているポイントです。
 
 ---
 【参考】  
