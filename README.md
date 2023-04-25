@@ -36,19 +36,22 @@ Instanaは１つのエージェントで、これら３つのシグナルを自�
 ---
 
 ## ハンズオン環境の準備
-このハンズオンでは、Instana のデモ環境である **Play with Instana** を利用して、実際に稼働する Instana の環境を確認していきます。
-Play with Instanaは、グローバル環境で日本語設定に切り替えられない点や構成変更ができない点を除けば、実際の製品そのものです。
+このハンズオンでは、Instana のデモ環境を利用して、実際に稼働する Instana の環境を確認していきます。
+今回の環境は、このハンズオンのために IBM Cloud上に払い出された環境を利用していきます。
 
-[Play with Instana](https://www.instana.com/getting-started-with-apm/) をクリックしますと、以下の画面が開きますので、紫の**Play with**のボタンをクリックします。  
-メール・アドレスを入力して、Play with Instana を開始してください。  
-![image](https://user-images.githubusercontent.com/22209835/114133781-8cdab700-9941-11eb-93f8-0c1e6ec5656a.png)
+Instanaの アクセス情報は、講師に確認してください。
+|Instana|　|
+--|--
+|アクセスURI| https://xxx.xxx.xxx.xxx/ |
+|ユーザー名| xxxxx |
+|パスワード| xxxxx |
 
-環境が開いて、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)を開始しましょう。
+環境が開いて、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaLab/blob/main/infrastructure%26platform.md)を開始しましょう。
 
 |章|ハンズオンリンク|備考
 --|--|--
-|1|[Infrastructure & Platform](https://github.com/ICpTrial/InstanaSandbox/blob/main/infrastructure%26platform.md)|基盤およびKubernetes/CloudFoundryなどプラットフォーム|
-|2|[Applications](https://github.com/ICpTrial/InstanaSandbox/blob/main/Applications.md)|マイクロサービス・アプリケーション稼働状況の可視化|
-|3|[WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)|エンドユーザー・挙動の理解|
-|4|[Events](https://github.com/ICpTrial/InstanaSandbox/blob/main/Events.md)|AIおよび機械学習により通知されたイベントからの問題判別|
-|※|[Applications updated](https://github.com/ICpTrial/InstanaSandbox/blob/main/Application-1118.md)|業務開発チームむけ短縮版|
+|1|[Infrastructure & Platform](https://github.com/ICpTrial/InstanaLab/blob/main/infrastructure%26platform.md)|基盤およびKubernetes/CloudFoundryなどプラットフォーム|
+|2|[Applications](https://github.com/ICpTrial/InstanaLab/blob/main/Applications.md)|マイクロサービス・アプリケーション稼働状況の可視化|
+|3|[WebSites & MobileApps](https://github.com/ICpTrial/InstanaLab/blob/main/WebSites%26MobileApps.md)|エンドユーザー・挙動の理解|
+|4|[Events](https://github.com/ICpTrial/InstanaLab/blob/main/Events.md)|AIおよび機械学習により通知されたイベントからの問題判別|
+|※|[Applications updated](https://github.com/ICpTrial/InstanaLab/blob/main/Application-1118.md)|業務開発チームむけ短縮版|
