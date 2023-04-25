@@ -24,10 +24,14 @@ AWSなどのパブリック・クラウド環境においては、インスタ�
 <img width="1815" alt="image" src="https://user-images.githubusercontent.com/22209835/234154473-c7386c36-bb71-4b2d-97e9-9ac7a4c6388b.png">
 
 再び **Map**に戻ります。　　
-<img width="1818" alt="image" src="https://user-images.githubusercontent.com/22209835/234153778-922e7999-7060-4fec-9707-cf86a0beeb60.png">
 
-1. 色が付いているブロックがあれば、そこは問題が発生している環境です（環境のタイミングによって、存在するとはかぎりません）。例えば、上の黄色のブロックは TCP再送が永久に繰り返されてノード自体の問題が疑われるノードです。
-  ![image](https://user-images.githubusercontent.com/22209835/114138096-168d8300-9948-11eb-9ce3-5b17856c369f.png)
+1. 色が付いているブロックがあれば、そこは問題が発生している環境です（環境のタイミングによって、存在するとはかぎりません）。例えば、下の黄色のブロックは CPU IO Wait が発生し問題が疑われるノードです。
+<img width="2054" alt="image" src="https://user-images.githubusercontent.com/22209835/234194765-e4cc222e-ec98-4a0e-88e3-3261dd6d2c70.png">
+1. 当該ノードの ダッシュボードを開くを押すことで、当該OSの 詳細なメトリックの状況がわかります。
+<img width="2046" alt="image" src="https://user-images.githubusercontent.com/22209835/234195099-f30d3462-9e8d-4e90-87f1-7307312482bd.png">
+
+
+
 
 
 
