@@ -29,6 +29,7 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 1. ひとつのサービスにカーソルを合わせて見ましょう。そのサービスと依存関係のあるサービスのみにフォーカスが当たります。<img width="1899" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/d71e22f3-08ef-4e85-9388-ddf5f1557169">
 1. 左上の メニューを選択することで、応答性能が遅いサービスのアイコンを大きくしたり、要求数の大きいサービスを大きくしたり、わかりやすく可視化できますので、いろいろ触ってみてください。　　<img width="1899" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/87764879-0bbe-46af-aa00-ca23c85ec6bd">
 
+---
 ### サービスとエンドポイント
 アプリケーションのビューで システムの全体像を把握しましたので、ここからは各アプリケーション・サーバー・プロセスやデータベースといったサービス、さらにそれらで処理されるHTTP要求やSQLといったエンドポイントへと、掘り下げてみます。
 1. バックエンドAPのサービスを開いてみます。<img width="1908" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/48d7009a-6241-4188-9d80-d10853b2e190">
@@ -39,39 +40,14 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 1. 下から二番目にある JVM （*bootstarp WAS90.SERV1*) を開いてみましょう。このアプリケーションが稼働するアプリケーション・サーバーのJVMの基盤メトリックが表示されます。GCの状況やスレッドの状況が分かりますので、たとえば実行時間が長いものがあれば基盤観点から、当該時間に GCで長く停止していることがなかったかなど確認できます。<img width="1901" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/1e20fee0-f5f1-4654-90f0-c5be6b0be911">
 1. 同じように **スタック＊＊ から、 **WebSphere** を開いてみましょう。<img width="962" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/e1dc8416-69d5-44ee-bbee-572bf0476f05">
 1. スレッド・プールの状況、データベースへの接続プールの状況、Webアプリケーションの状況などが把握できます。これまで基盤メトリックを確認するには、環境に入ってツールで確認したり、ログからツールやEXCELで加工したりといったことをしてきましたが、JavaもWebSphereもリアルタイムで現在のミドルウェアの状況を判断することができ、問題があった場合の原因判別を高速化することができます。<img width="1912" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/72b38b59-ca80-496f-903d-0900f5c657bb">
-
-
-
----
-### アプリケーションの問題切り分け
-
-1. **Summary**のダッシュボードに戻ります。
-エラーとなっているコールがありますので、ここを確認していきましょう。  
-もしエラーがない状況でしたら、右上のボタンで表示時間を１時間や６時間、１２時間などに広げてみてください。  
-![image](https://user-images.githubusercontent.com/22209835/114329793-3e186180-9b7b-11eb-9dd4-cd363cd1ee1a.png)
-1. 中央のエラーコール率のグラフの山をマウスで選択して、**View in Analyze**で解析画面で確認していきます。  
-タイミングによって、起きているエラーは異なりますので、みなさんの画面で確認しているエラーを選択して開いて下さい。
-![image](https://user-images.githubusercontent.com/22209835/114329771-2e008200-9b7b-11eb-8da1-58dab02b41c3.png)
-1. アプリケーションを理解していれば、より具体的にアクションが採れるかもしれませんが、ここでは、一番エラー数の多い上の **eum-frontend**を選択します。  
-タイミングによって起きているエラーは異なりますので、環境に応じて 一番多いエラーを選択して開いて下さい。
-![image](https://user-images.githubusercontent.com/22209835/114329840-5c7e5d00-9b7b-11eb-9926-f7f1f0cc29c1.png)
-1. ここでは、エラーを返している **eum-frontend**の要求がリストされています。  
-軒並み応答性能が5000ミリ秒を超えてエラーとなっているようですね。これらについて詳細を確認していきましょう。  
-一番上のエラー要求をクリックして、要求の中身をみていきます。
-![image](https://user-images.githubusercontent.com/22209835/114329872-699b4c00-9b7b-11eb-9e26-f49bb8836b59.png)
-1. この `GET /zh_cn/shop`要求の詳細がわかります。中身を確認しながらスクロールダウンしてください。
-![image](https://user-images.githubusercontent.com/22209835/114329913-7c158580-9b7b-11eb-8843-5767842cbb98.png)
-1. タイムラインのビューでは、この要求に関連して実行された マイクロサービスの呼び出し関係が可視化されています。
-![image](https://user-images.githubusercontent.com/22209835/114329938-8e8fbf00-9b7b-11eb-82b4-b0b2e79366ce.png)
-1. さらにスクロールダウンしていくと、コールのビューでは、各マイクロサービスの呼び出しの依存関係 呼び出し元と呼び出し先が確認できます。
-![image](https://user-images.githubusercontent.com/22209835/114329959-a0716200-9b7b-11eb-8eaa-bd8b8fe06ecf.png)
-1. マイクロサービスの一番下で、DATABASE（MySQLサービス）への CONNECT要求が5000ミリ秒でタイム・アウトし、エラーなっているのが分かります。
-右のペーンには、エラーの内容と、問題が発生したコードのスタックトレースが表示されています。
-![image](https://user-images.githubusercontent.com/22209835/114329998-b2eb9b80-9b7b-11eb-9412-ecda686ca624.png)
-1. 問題となっている MySQLサービスをクリックすると、当該時間帯に Offlineが検知されているのが分かります。
-![image](https://user-images.githubusercontent.com/22209835/114330035-c8f95c00-9b7b-11eb-9618-9da6e087cea4.png)
-このようなかたちで、エラー応答となったマイクロサービスの依存関係を解析した上で、問題の根本原因の分析へと絞り込んでいくことが可能です。
+1. 今度は ダイレクトの データベース (*db2*) のサービスの画面を開いてみましょう。
+ここでは、エンドポイントに テーブルがリストされています。アクセスの集中しているテーブルなどが分かりますね。下段右には、実際に発行されているSQLステートメントがリストされていますので、ここでも応答性能が出ていないSQLなどを把握可能です。<img width="1917" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/573051a9-37b7-4edb-86b6-b6a0d9302c8f">
+1.さらに、エンドポイントから *PURCHASEORDER*を開いてみましょう。このテーブルに対して実行されているSQLが把握できます。<img width="962" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/94633d87-c7ee-4aa1-ae3d-b61763d2c4c7">
+1.**フロー**からは、このテーブルに対してアクセスを行っているアプリケーションの処理を特定することができます。どの業務の処理がテーブルに対してアクセスをいるか、すぐに特定できます。<img width="960" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/21c0c37d-5f73-42b1-82db-d3f7261f930d">
+1.**スタック＊＊から、Db2のメトリックを確認してみましょう。このアプリケーションでは SAMPLE というdb２インスタンスを利用しています。<img width="960" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/26cf50fb-2887-4098-a2ac-a9ca863c6c5d">
+1.Db2 は非常に多様なメトリックを取得しています。ロックの待機の解析や長時間実行している処理の有無、CPUリソース消費が激しいクエリなどが確認できます。
+<img width="1908" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/2337cea4-265d-4fdd-9473-275b3189a75b">
 
 ---
-ここまでで、サーバー側のマイクロサービスの挙動を理解するための**Applications**の確認は終了です。  
-次に、ブラウザやモバイル・アプリケーションなど、エンドユーザー側の挙動をみる [WebSites & MobileApps](https://github.com/ICpTrial/InstanaSandbox/blob/main/WebSites%26MobileApps.md)をみていきます。
+ここまでで、分散トレーシングによってアプリケーションの稼働状況を理解するための**アプリケーション**の確認は終了です。  
+次は、問題が発生した際に、どのようにみえるか確認していきましょう。
