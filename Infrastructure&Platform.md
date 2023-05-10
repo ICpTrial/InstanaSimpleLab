@@ -59,4 +59,4 @@ KubernetesやOpenShift環境においても、DaemonSetとして稼働するInst
 ---
 これで  **インフラストラクチャ** および **プラットフォーム** の確認は終わりです。  
 様々な環境に関わるリソース情報が整理され、それぞれ関連付けられて、コンソールに統合されていることが理解頂けたと思います。  
-次に分散トレースとログの解析結果を可視化している [アプリケーション](https://github.com/ICpTrial/InstanaLab/blob/main/Applications.md) を見ていきたいと思います。
+次に分散トレースとログの解析結果を可視化している [アプリケーション](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Applications.md) を見ていきたいと思います。
