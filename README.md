@@ -50,6 +50,6 @@ Instanaの アクセス情報は、講師に確認してください。
 
 |章|ハンズオンリンク|備考
 --|--|--
-|1|[Infrastructure & Platform](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Infrastructure%26Platform.md)|基盤およびKubernetes/CloudFoundryなどプラットフォーム|
-|2|[Applications](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Applications.md)|アプリケーション稼働状況の可視化|
-|3|[Incidents](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Events.md)|アプリケーションの問題判別|
+|1|[インフラとプラットフォーム](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Infrastructure%26Platform.md)|基盤およびKubernetes/CloudFoundryなどプラットフォーム|
+|2|[アプリケーション](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Applications.md)|アプリケーション稼働状況の可視化|
+|3|[問題判別とイベント](https://github.com/ICpTrial/InstanaSimpleLab/blob/main/Events.md)|アプリケーションの問題判別|
