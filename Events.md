@@ -10,8 +10,7 @@
 中央のエラーコール率のグラフに山ができており、エラーが発生していることが分かります。直近のテスト状況が分かりやすいように、右上のボタンで 表示時間を10分や30分などに設定してみてください。 <img width="1914" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/5539df06-6f43-4d2a-b69b-ff6393467730">
 1. エラーコール率のグラフにフォーカスを当て、虫眼鏡アイコンをクリックして、解析画面を表示をします。<img width="1909" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/0763bfae-23e2-4a96-9bc8-41dd7044b50e">
 1. エラーとなった処理の一覧が表示されます。以下の例では仕掛かり中の エラーが１件、接続エラーが132件発生していますね。仕掛かり中でエラーとなったクエリを開きます。<img width="961" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/1235a322-eb7d-4010-8561-28c3ae514c64">
-1. 仕掛かり中でエラーとなったクエリを含む要求が、フロントのWEB、APからバックエンドAPへとどのようなシーケンスで呼び出され、どの処理がエラーになったのかが即座に分かります。　　右側には JDBCドライバーが返しているエラー・メッセージが表示されていますし、実際に投げていたクエリが分かります。アプリケーション側でエラーを吐いていれば、そのログ・メッセージも出力されます（このアプリケーションはログを入れていません）。
-<img width="969" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/65867734-98f4-4030-af5b-e6ae1d519590">
+1. 仕掛かり中でエラーとなったクエリを含む要求が、フロントのWEB、APからバックエンドAPへとどのようなシーケンスで呼び出され、どの処理がエラーになったのかが即座に分かります。　　右側には JDBCドライバーが返しているエラー・メッセージが表示されていますし、実際に投げていたクエリが分かります。アプリケーション側でエラーを吐いていれば、そのログ・メッセージも出力されます（このアプリケーションはログを入れていません）。<img width="969" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/65867734-98f4-4030-af5b-e6ae1d519590">
 1. さきほどの ダッシュボードに戻ります。**エラー・メッセージ＊＊のタブには、要求が返したエラー・メッセージが記録されています。ここのエラー・メッセージのリンクから、このエラー・メッセージを返している要求を確認していくこともできます。<img width="1903" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/c23e7b94-2ced-406a-afa6-a5c227ce97af">
 1. 一つ選んで開いてみましょう<img width="1912" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/047109b4-99e4-4a13-96bc-794b22189fd5">
 1. このエラーを返している要求のトレースが確認できます。Instanaはサンプリングではなく、*全要求トレース＊　ですので、問題が発生した場合であっても、かならずその要求がトレースに含まれており、調査することができます。<img width="1910" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/e165bf57-c91f-40ee-a08e-1cfbb833555c">
