@@ -44,7 +44,7 @@ Instanaの アクセス情報は、講師に確認してください。
 --|--
 |アクセスURI| https://161.202.88.130 |
 |ユーザー名| admin@instana.local |
-|パスワード| smbccfInstana@0908 |
+|パスワード| xxxxxx |
 
 環境が開いて、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaLab/blob/main/infrastructure%26platform.md)を開始しましょう。
 
