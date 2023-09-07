@@ -37,12 +37,12 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 #### アプリケーション・サーバーのサービス
 1. バックエンドAPのサービスを開いてみます。<img width="1908" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/48d7009a-6241-4188-9d80-d10853b2e190">
 1. このバックエンドAPサーバーにフォーカスしたゴールデン・シグナルのダッシュボードが表示されます。下段中央の**エンドポイント**には、個々のパスごとの処理数や応答性能が把握可能になっています。業務ごとにパスが設定されていることも多くあると思いますので、業務観点からの処理数の概算把握にも有用ですし、応答に時間がかかっている処理の特定にも有効です。<img width="1909" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/11772d27-bb8b-4c99-8f58-d996c99dd4ae">
-1. 特定のエンドポイントを開いていみましょう。ここでは POST /BankBackend/*orderlist* を開いてみます。この処理のみの、処理数、応答性能がエラー発生状況が分かります。<img width="963" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/a285c960-6dcf-457a-8d26-6eb850126664">
-1. さらに **フロー** のタブを開くと、この処理を呼び出しているフロントの処理、この処理から呼び出されるバックエンドの処理が分かります。各処理の要求数、応答性能なども表示されていますので、どの経路から処理が来ているのか、どこで応答時間がかかっているのか分かります。<img width="1898" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/2a94ad8a-8dc8-42a9-9e04-091d144b7753">
-1. ここで 上にある **スタック** を開いてみましょう。このアプリケーション・タブでは稼働するサービス名、インフラストラクチャ・タブでは、このアプリケーションが稼働する技術スタックを確認することが可能です <img width="1912" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/17011c75-d7ab-464e-ae36-0b99abb01cee">
-1. 下から二番目にある JVM （*bootstarp WAS90.SERV1*) を開いてみましょう。このアプリケーションが稼働するアプリケーション・サーバーのJVMの基盤メトリックが表示されます。GCの状況やスレッドの状況が分かりますので、たとえば実行時間が長いものがあれば基盤観点から、当該時間に GCで長く停止していることがなかったかなど確認できます。<img width="1901" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/1e20fee0-f5f1-4654-90f0-c5be6b0be911">
-1. 同じように **スタック＊＊ から、 **WebSphere** を開いてみましょう。<img width="962" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/e1dc8416-69d5-44ee-bbee-572bf0476f05">
-1. スレッド・プールの状況、データベースへの接続プールの状況、Webアプリケーションの状況などが把握できます。これまで基盤メトリックを確認するには、環境に入ってツールで確認したり、ログからツールやEXCELで加工したりといったことをしてきましたが、JavaもWebSphereもリアルタイムで現在のミドルウェアの状況を判断することができ、問題があった場合の原因判別を高速化することができます。<img width="1912" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/72b38b59-ca80-496f-903d-0900f5c657bb">
+1. 特定のエンドポイントを開いていみましょう。ここでは POST /BankBackend/*orderlist* を開いてみます。この処理のみの、処理数、応答性能がエラー発生状況が分かります。<img width="2053" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/a459ad87-ff1b-41f3-ba94-94bf4ea5d13f">
+1. さらに **フロー** のタブを開くと、この処理を呼び出しているフロントの処理、この処理から呼び出されるバックエンドの処理が分かります。各処理の要求数、応答性能なども表示されていますので、どの経路から処理が来ているのか、どこで応答時間がかかっているのか分かります。<img width="2052" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/b35b55bb-241a-4936-8a3e-b6b5a4afdb1a">
+1. ここで 上にある **スタック** を開いてみましょう。このアプリケーション・タブでは稼働するサービス名、インフラストラクチャ・タブでは、このアプリケーションが稼働する技術スタックを確認することが可能です <img width="2051" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/3e96378b-c5c7-483a-b851-2714e9126055">
+1. 一番下ににある JVM を開いてみましょう。このアプリケーションが稼働するアプリケーション・サーバーのJVMの基盤メトリックが表示されます。GCの状況やスレッドの状況が分かりますので、たとえば実行時間が長いものがあれば基盤観点から、当該時間に GCで長く停止していることがなかったかなど確認できます。<img width="2052" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/052a2256-2f33-4ea2-8d64-867011b8851b">
+1. 同じように **スタック＊＊ から、 さらに表示された **WebSphere #default Server** を開いてみましょう。<img width="2048" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/80941d20-c0ce-4542-ac62-51bfea4e565e">
+1. スレッド・プールの状況、データベースへの接続プールの状況、Webアプリケーションの状況などが把握できます。これまで基盤メトリックを確認するには、環境に入ってツールで確認したり、ログからツールやEXCELで加工したりといったことをしてきましたが、JavaもWebSphereもリアルタイムで現在のミドルウェアの状況を判断することができ、問題があった場合の原因判別を高速化することができます。<img width="2050" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/2b5bb689-7811-41a7-a2c9-c3ccdde3759d">
 
 #### データベースのサービス
 1. 今度は ダイレクトの データベース (*db2*) のサービスの画面を開いてみましょう。
