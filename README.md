@@ -42,8 +42,8 @@ Instanaは１つのエージェントで、これら３つのシグナルを自�
 Instanaの アクセス情報は、講師に確認してください。
 |Instana|　|
 --|--
-|アクセスURI| https://xxx.xxx.xxx.xxx/ |
-|ユーザー名| xxxxx |
+|アクセスURI| https://161.202.88.130 |
+|ユーザー名| admin@instana.local |
 |パスワード| xxxxx |
 
 環境が開いて、準備できたら、[こちらからStep By Stepのハンズオン](https://github.com/ICpTrial/InstanaLab/blob/main/infrastructure%26platform.md)を開始しましょう。
