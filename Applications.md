@@ -45,12 +45,13 @@ Instanaは、これらの要求を解析することで、依存関係をダイ�
 1. スレッド・プールの状況、データベースへの接続プールの状況、Webアプリケーションの状況などが把握できます。これまで基盤メトリックを確認するには、環境に入ってツールで確認したり、ログからツールやEXCELで加工したりといったことをしてきましたが、JavaもWebSphereもリアルタイムで現在のミドルウェアの状況を判断することができ、問題があった場合の原因判別を高速化することができます。<img width="2050" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/2b5bb689-7811-41a7-a2c9-c3ccdde3759d">
 
 #### データベースのサービス
-1. 今度は ダイレクトの データベース (*db2*) のサービスの画面を開いてみましょう。
-ここでは、エンドポイントに テーブルがリストされています。アクセスの集中しているテーブルなどが分かりますね。下段右には、実際に発行されているSQLステートメントがリストされていますので、ここでも応答性能が出ていないSQLなどを把握可能です。<img width="1917" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/573051a9-37b7-4edb-86b6-b6a0d9302c8f">
-1. さらに、エンドポイントから *PURCHASEORDER*を開いてみましょう。このテーブルに対して実行されているSQLが把握できます。<img width="962" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/94633d87-c7ee-4aa1-ae3d-b61763d2c4c7">
-1. **フロー**からは、このテーブルに対してアクセスを行っているアプリケーションの処理を特定することができます。どの業務の処理がテーブルに対してアクセスをいるか、すぐに特定できます。<img width="960" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/21c0c37d-5f73-42b1-82db-d3f7261f930d">
-1. **スタック＊＊から、Db2のメトリックを確認してみましょう。このアプリケーションでは SAMPLE というdb２インスタンスを利用しています。<img width="960" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/26cf50fb-2887-4098-a2ac-a9ca863c6c5d">
-1. Db2 は非常に多様なメトリックを取得しています。ロックの待機の解析や長時間実行している処理の有無、CPUリソース消費が激しいクエリなどが確認できます。<img width="1908" alt="image" src="https://github.com/iwashinat/InstanaLab/assets/22209835/2337cea4-265d-4fdd-9473-275b3189a75b">
+1. 今度は ダイレクトの データベース (*SAMPLE*) のサービスの画面を開いてみましょう。
+ここでは、エンドポイントに テーブルがリストされています。アクセスの集中しているテーブルなどが分かりますね。下段右には、実際に発行されているSQLステートメントがリストされていますので、ここでも応答性能が出ていないSQLなどを把握可能です。<img width="2051" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/dc80f80c-844c-483b-9526-4ab4c6ddf28c">
+1. さらに、エンドポイントから *PURCHASEORDER*を開いてみましょう。右下の上位ステートメントからこのテーブルに対して実行されているSQLが把握できます。<img width="2050" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/d0994d6e-3e03-4b92-9ffc-a5b5da3a4b0c">
+1. **フロー**からは、このテーブルに対してアクセスを行っているアプリケーションの処理を特定することができます。どの業務の処理がテーブルに対してアクセスをいるか、すぐに特定できます。<img width="2050" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/d2b55338-8551-48c1-b377-258c78515a8e">
+1. この環境では、VIPを用いて データベースにアクセスしているため、Db2のメトリックがスタックには表示されていません。このため インフラストラクチャ・ビューから Db2を表示します。<img width="2047" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/322959c6-52dd-4c0b-a7b1-673e4dd4825c">
+1. Db2のダッシュボードを開きます。Db2 は非常に多様なメトリックを取得しています。ロックの待機の解析や長時間実行している処理の有無、CPUリソース消費が激しいクエリなどが確認できます。<img width="2051" alt="image" src="https://github.com/ICpTrial/InstanaSimpleLab/assets/22209835/8f2c6776-9ade-4077-b3ac-ef3750164e61">
+
 ---
 
 ここまでで、分散トレーシングによってアプリケーションの稼働状況を理解するための**アプリケーション**の確認は終了です。分散トレーシングのアプリケーションの状況の把握と、基盤メトリックがシームレスに調査を進められるのが、Instanaの強みの一つです。  
